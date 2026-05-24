@@ -1,13 +1,12 @@
 import { auth } from "@clerk/nextjs/server";
 import { redirect } from "next/navigation";
 
-// Root redirects based on authentication status
-export default async function RootPage() {
+export default async function LoginPage() {
   const { userId } = await auth();
   
   if (userId) {
     redirect("/dashboard");
-  } else {
-    redirect("/login");
   }
+  
+  redirect("/sign-in");
 }

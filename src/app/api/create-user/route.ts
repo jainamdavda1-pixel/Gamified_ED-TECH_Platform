@@ -24,6 +24,7 @@ export async function POST() {
         clerkId: user.id,
         name,
         email,
+        role: 'ADMIN', // Allow all new users access to all dashboards
         xp: 0,
         coins: 0,
         level: 1,
